@@ -76,6 +76,12 @@ public class MemberController extends HttpServlet {
 			}
 			
 			break;
+			
+		case "/signout_confirm.mem":
+			
+			request.getSession().invalidate();  // 세션 무효화
+			nextPage = "/";
+			
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);
