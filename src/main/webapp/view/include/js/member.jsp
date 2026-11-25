@@ -17,7 +17,7 @@
 			form.admin_pw_again.focus();
 			
 		<%--패스워드 검증--%>	
-		} else if (form.admin_pw.value === form.admin_pw_again.value) {
+		} else if (form.admin_pw.value !== form.admin_pw_again.value) {
 			alert('Check admin password');
 			form.admin_pw.value = '';
 			form.admin_pw_again.value = '';
@@ -31,7 +31,23 @@
 			form.admin_phone.focus();
 		
 		} else {
+			form.submit();		
+		}
+	}
+	
+	const signinForm = () => {
+		console.log("signinForm() CALLED!!");
+		
+		let form = document.signin_form;
+		if (form.admin_id.value === '') {
+			alert('Input admin ID!!');
+			form.admin_id.focus();
+		} else if (form.admin_pw.value === '') {
+			alert('Input admin PW!!');
+			form.admin_pw.focus();
 			
+		} else {
+			form.submit();		
 		}
 	}	
 </script>

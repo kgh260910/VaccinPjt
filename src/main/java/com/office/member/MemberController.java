@@ -6,6 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 
 @WebServlet("*.mem")
@@ -34,12 +36,46 @@ public class MemberController extends HttpServlet {
 			
 		case "/signup_confirm.mem":			// 회원가입 확인
 			
+			memberService = new MemberService(new MemberDao());
+			int resultForSignupConfirm = memberService.signupConfirm(request, response);
+			
+			if (resultForSignupConfirm > 0) {
+				nextPage = generateView("signup_ok");
+			} else {
+				nextPage = generateView("signup_ng");
+			}
+			
 			break;
 			
 		case "/signin_form.mem":
 			
+			nextPage = generateView("signin_form");
+			
 			break;
 		
+		case "/signin_confirm.mem":
+			
+			memberService = new MemberService(new MemberDao());
+			String signinedAdminId = memberService.signinConfirm(request, response);
+			
+			if (signinedAdminId != null) {
+				System.out.println("[MemberController] SIGNIN SUCCESS!!");
+				
+				// 로그인성공시 세션 만들기
+				HttpSession session = request.getSession();
+				session.setAttribute("signinedAdminId", signinedAdminId);
+				session.setMaxInactiveInterval(60 * 30);
+
+				nextPage = generateView("signin_ok");
+			
+			} else {
+				System.out.println("[MemberController] SIGNIN FAIL!!");
+				
+				nextPage = generateView("signin_ng");
+				
+			}
+			
+			break;
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);

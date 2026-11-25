@@ -40,8 +40,6 @@
 				<input class="basic_button" type="button" value="SIGN UP" onclick="signupForm();">
 				<input class="basic_button" type="reset" value="RESET">
 				
-				
-			
 			</form>
 		
 		</div>
