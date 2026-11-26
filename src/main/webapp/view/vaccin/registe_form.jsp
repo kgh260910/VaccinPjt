@@ -26,9 +26,9 @@
 			method="post" 
 			name="registe_form">
 			
-			<input type="text" name="fvp_name" placeholder="Input name">
+			<input class="basic_input" type="text" name="fvp_name" placeholder="Input name">
 			<br>
-			<select name="ss_number">
+			<select class="basic_select" name="ss_number">
 				<option value="">-- 선택 --</option>
 				<option value="720520-1018547">720520-1******</option>
 				<option value="710210-2084561">710210-2******</option>
@@ -37,11 +37,11 @@
 				<option value="800710-1025698">800710-1******</option>	
 			</select>
 			<br>
-			<input type="email" name="fvp_mail" placeholder="Input mail">
+			<input class="basic_input" type="email" name="fvp_mail" placeholder="Input mail">
 			<br>
-			<input type="text" name="fvp_phone" placeholder="Input phone">
+			<input class="basic_input" type="text" name="fvp_phone" placeholder="Input phone">
 			<br>
-			<select name="fv_location_no">
+			<select class="basic_select" name="fv_location_no">
 				<option value="">-- 선택 --</option>
 				<option value="1001">A접종처</option>
 				<option value="1002">B접종처</option>
@@ -50,7 +50,7 @@
 				<option value="1005">E접종처</option>
 			</select>
 			<br>
-			<select name="fv_type">
+			<select class="basic_select" name="fv_type">
 				<option value="">-- 선택 --</option>
 				<option value="A">A</option>
 				<option value="B">B</option>
@@ -59,8 +59,8 @@
 				<option value="E">E</option>
 			</select>
 			<br>
-			<input type="button" value="REGISTE" onclick="registeForm();">
-			<input type="reset" value="RESET">
+			<input class="basic_button" type="button" value="REGISTE" onclick="registeForm();">
+			<input class="basic_button" type="reset" value="RESET">
 			
 			</form>
 			

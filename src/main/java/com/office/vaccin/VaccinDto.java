@@ -4,7 +4,7 @@ public class VaccinDto {
 	
 	private int fvp_no;
 	private String fvp_name;
-	private String ss_name;		
+	private String ss_number;		
 	private String fvp_mail; 		
 	private String fvp_phone;
 	private int fv_location_no;
@@ -14,11 +14,11 @@ public class VaccinDto {
 	public VaccinDto() {
 	}
 
-	public VaccinDto(int fvp_no, String fvp_name, String ss_name, String fvp_mail, String fvp_phone, int fv_location_no,
+	public VaccinDto(int fvp_no, String fvp_name, String ss_number, String fvp_mail, String fvp_phone, int fv_location_no,
 			String fv_type, String fvp_reg_date) {
 		this.fvp_no = fvp_no;
 		this.fvp_name = fvp_name;
-		this.ss_name = ss_name;
+		this.ss_number = ss_number;
 		this.fvp_mail = fvp_mail;
 		this.fvp_phone = fvp_phone;
 		this.fv_location_no = fv_location_no;
@@ -26,10 +26,10 @@ public class VaccinDto {
 		this.fvp_reg_date = fvp_reg_date;
 	}
 	
-	public VaccinDto(String fvp_name, String ss_name, String fvp_mail, String fvp_phone, int fv_location_no,
+	public VaccinDto(String fvp_name, String ss_number, String fvp_mail, String fvp_phone, int fv_location_no,
 			String fv_type) {
 		this.fvp_name = fvp_name;
-		this.ss_name = ss_name;
+		this.ss_number = ss_number;
 		this.fvp_mail = fvp_mail;
 		this.fvp_phone = fvp_phone;
 		this.fv_location_no = fv_location_no;
@@ -52,12 +52,12 @@ public class VaccinDto {
 		this.fvp_name = fvp_name;
 	}
 
-	public String getSs_name() {
-		return ss_name;
+	public String getSs_number() {
+		return ss_number;
 	}
 
-	public void setSs_name(String ss_name) {
-		this.ss_name = ss_name;
+	public void setSs_number(String ss_number) {
+		this.ss_number = ss_number;
 	}
 
 	public String getFvp_mail() {

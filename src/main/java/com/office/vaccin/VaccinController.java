@@ -34,6 +34,14 @@ public class VaccinController extends HttpServlet {
 			break;
 			
 		case "/injection_registe_confirm.vac":
+			
+			vaccinService = new VaccinService(new VaccinDao());
+			int resultForRegist = vaccinService.registeConfirm(request, response);
+			
+			nextPage = generateView("registe_result");
+			
+			
+			
 			break;
 		}
 		
