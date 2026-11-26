@@ -16,7 +16,6 @@ public class VaccinController extends HttpServlet {
         super();
     }
 
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		String requestURI = request.getRequestURI();
@@ -40,9 +39,14 @@ public class VaccinController extends HttpServlet {
 			
 			nextPage = generateView("registe_result");
 			
-			
-			
 			break;
+			
+		case "/injection_list.vac":
+			
+			vaccinService = new VaccinService(new VaccinDao());
+			vaccinService.listup(request, response);
+			
+			nextPage = generateView("registed_list");
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(nextPage);

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,20 +23,17 @@
 			
 			<h1>REGISTE FORM</h1>
 			
-			<%
-				Object obj = request.getAttribute("resultForRegist");
-				int registeResult =(Integer) obj;
+			<c:choose>
 				
-				if (registeResult > 0) {
-			%>		
-				<h3>REGISTE SUCCESS!!</h3>
-			<%		
-				} else {
-			%>
-				<h3>REGISTE FAIL!!</h3>
-			<%		
-				}
-			%>
+				<c:when test="${resultForRegist > 0}">
+					<h3>REGISTE SUCCESS!!</h3>
+				</c:when>
+				
+				<c:otherwise>
+					<h3>REGISTE FAIL!!</h3>
+				</c:otherwise>
+			
+			</c:choose>
 			
 		</div>
 	</section>
