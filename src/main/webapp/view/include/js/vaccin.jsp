@@ -30,6 +30,9 @@
 			alert('Select fv type!!');
 			form.fv_type.focus();
 			
+		} else {
+			form.submit();
+			
 		}
 	}
 	
