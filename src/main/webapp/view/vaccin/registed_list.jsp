@@ -21,26 +21,27 @@
 	<section>
 		<div class="section_wrap">		
 			<h1>REGISTED LIST</h1>
-			<table>
+			<table class="list">
 				<thead>
 					<tr>
 						<th>NO</th>
 						<th>NAME</th>
 						<th>MAIL</th>
 						<th>PHONE</th>
-						<th>SS_NUMBER</th>
-						<th>SS_NAME</th>
-						<th>SS_ADDR</th>
-						<th>SS_PHONE</th>
-						<th>LOCATION_NO</th>
-						<th>LOCATION_NAME</th>
-						<th>LOCATION_ADDR</th>
-						<th>LOCATION_MANAGER</th>
-						<th>TYPE</th>
-						<th>TYPE_NO</th>
-						<th>TYPE_MANUF_COUNTRY</th>
-						<th>TYPE_MANUF_DATE</th>
+						<th>S_NUM</th>
+						<th>S_NAM</th>
+						<th>S_ADD</th>
+						<th>S_PHO</th>
+						<th>L_NO</th>
+						<th>L_NAME</th>
+						<th>L_ADDR</th>
+						<th>L_MANAGER</th>
+						<th>T</th>
+						<th>T_NO</th>
+						<th>T_M_COUN</th>
+						<th>T_M_DATE</th>
 						<th>REG_DATE</th>
+						<th>수정</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -65,6 +66,9 @@
 							<td>${item.typeDto.fv_type_manuf_country}</td>
 							<td>${item.typeDto.fv_type_manuf_date}</td>
 							<td>${item.fvp_reg_date}</td>
+							<td>
+								<a href="<%= request.getContextPath()%>/injection_modify.vac?fvp_no=${item.fvp_no}">수정</a>
+							</td>
 						</tr>
 					</c:forEach>
 					
