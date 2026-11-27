@@ -119,11 +119,19 @@ public class VaccinDao implements DatabaseInfo {
 				String fv_type_manuf_date = rs.getString("fv_type_manuf_date");
 				
 				// assemble
-				VaccinDto vaccinDto = new VaccinDto(fvp_no, fvp_name, null, fvp_mail, fvp_phone, 0, null, fvp_reg_date);
+				VaccinDto vaccinDto = new VaccinDto(fvp_no, fvp_name, null, fvp_mail, 
+						fvp_phone, 0, null, fvp_reg_date);
 				
-				SocialNumberDto socialNumberDto = new SocialNumberDto(ss_number, ss_name, ss_addr, ss_phone, ss_reg_date);
-				LocationDto locationDto = new LocationDto(fv_location_no, fv_location_name, fv_location_addr, fv_location_phone, fv_location_manager);
-				TypeDto typeDto = new TypeDto(fv_type_no, fv_type, fv_type_manuf_country, fv_type_manuf_date);
+				SocialNumberDto socialNumberDto = new SocialNumberDto(
+						ss_number, ss_name, 
+						ss_addr, ss_phone, 
+						ss_reg_date);
+				LocationDto locationDto = new LocationDto(
+						fv_location_no, fv_location_name, 
+						fv_location_addr, fv_location_phone, 
+						fv_location_manager);
+				TypeDto typeDto = new TypeDto(fv_type_no, fv_type, 
+						fv_type_manuf_country, fv_type_manuf_date);
 			
 				vaccinDto.setSocialNumberDto(socialNumberDto);
 				vaccinDto.setLocationDto(locationDto);

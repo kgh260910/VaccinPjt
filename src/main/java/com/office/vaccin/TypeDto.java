@@ -7,7 +7,8 @@ public class TypeDto {
 	private String fv_type_manuf_country;
 	private String fv_type_manuf_date;
 	
-	public TypeDto(int fv_type_no, String fv_type, String fv_type_manuf_country, String fv_type_manuf_date) {
+	public TypeDto(int fv_type_no, String fv_type, 
+			String fv_type_manuf_country, String fv_type_manuf_date) {
 		this.fv_type_no = fv_type_no;
 		this.fv_type = fv_type;
 		this.fv_type_manuf_country = fv_type_manuf_country;

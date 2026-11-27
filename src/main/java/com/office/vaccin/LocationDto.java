@@ -8,7 +8,8 @@ public class LocationDto {
 	private String fv_location_phone;
 	private String fv_location_manager;
 	
-	public LocationDto(int fv_location_no, String fv_location_name, String fv_location_addr, String fv_location_phone,
+	public LocationDto(int fv_location_no, String fv_location_name, 
+			String fv_location_addr, String fv_location_phone,
 			String fv_location_manager) {
 		this.fv_location_no = fv_location_no;
 		this.fv_location_name = fv_location_name;

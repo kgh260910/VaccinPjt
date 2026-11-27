@@ -19,10 +19,8 @@
 	<jsp:include page="../include/nav.jsp"/>
 
 	<section>
-		<div class="section_wrap">
-			
+		<div class="section_wrap">		
 			<h1>REGISTED LIST</h1>
-			
 			<table>
 				<thead>
 					<tr>
@@ -46,25 +44,31 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>NO</td>
-						<td>NAME</td>
-						<td>MAIL</td>
-						<td>PHONE</td>
-						<td>SS_NUMBER</td>
-						<td>SS_NAME</td>
-						<td>SS_ADDR</td>
-						<td>SS_PHONE</td>
-						<td>LOCATION_NO</td>
-						<td>LOCATION_NAME</td>
-						<td>LOCATION_ADDR</td>
-						<td>LOCATION_MANAGER</td>
-						<td>TYPE</td>
-						<td>TYPE_NO</td>
-						<td>TYPE_MANUF_COUNTRY</td>
-						<td>TYPE_MANUF_DATE</td>
-						<td>REG_DATE</td>
-					</tr>
+				
+					<c:forEach var="item" items="${vaccinDtos}">
+						
+						<tr>
+							<td>${item.fvp_no}</td>
+							<td>${item.fvp_name}</td>
+							<td>${item.fvp_mail}</td>
+							<td>${item.fvp_phone}</td>
+							<td>${item.socialNumberDto.ss_number}</td>
+							<td>${item.socialNumberDto.ss_name}</td>
+							<td>${item.socialNumberDto.ss_addr}</td>
+							<td>${item.socialNumberDto.ss_phone}</td>
+							<td>${item.locationDto.fv_location_no}</td>
+							<td>${item.locationDto.fv_location_name}</td>
+							<td>${item.locationDto.fv_location_addr}</td>
+							<td>${item.locationDto.fv_location_manager}</td>
+							<td>${item.typeDto.fv_type}</td>
+							<td>${item.typeDto.fv_type_no}</td>
+							<td>${item.typeDto.fv_type_manuf_country}</td>
+							<td>${item.typeDto.fv_type_manuf_date}</td>
+							<td>${item.fvp_reg_date}</td>
+						</tr>
+					</c:forEach>
+					
+					
 				</tbody>		
 			</table>
 			
